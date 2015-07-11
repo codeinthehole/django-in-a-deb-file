@@ -1,0 +1,13 @@
+TODO
+.vagrant
+
+# Build artifacts
+*.deb
+
+# Python packaging
+build/
+dist/
+
+# Debian packaging
+debian/helloworld/
+debian/helloworld.*.log
