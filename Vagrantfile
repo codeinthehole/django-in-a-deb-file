@@ -17,6 +17,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # A machine for testing installation the .deb file
   config.vm.define "test" do |test|
     config.vm.provision "shell", path: "deploy/bootstrap_test_box.sh"
+    config.vm.network "forwarded_port", guest: 80, host: 8080
+    config.vm.network "forwarded_port", guest: 8000, host: 8081
   end
 
 end
