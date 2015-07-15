@@ -1,6 +1,24 @@
 #!/bin/bash
 
-start helloworld
+# Start/restart Upstart job
+SERVICE=helloworld
+if $(status $SERVICE | grep -q "start/running")
+then
+    # Service already running - restart
+    restart $SERVICE
+else
+    # Start service
+    start $SERVICE
+fi
+
+# Remove default nginx conf
+if [ -h /etc/nginx/sites-enabled/default ]
+then
+    unlink /etc/nginx/sites-enabled/default
+fi
+
+# Reload nginx
+service nginx configtest && service nginx restart
 
 #DEBHELPER#
 exit 0
