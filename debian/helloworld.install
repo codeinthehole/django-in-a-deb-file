@@ -1,1 +1,3 @@
 etc/uwsgi/helloworld.ini /etc/uwsgi/
+etc/init/helloworld.conf /etc/init/
+

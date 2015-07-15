@@ -1,0 +1,6 @@
+#!/bin/bash
+
+start helloworld
+
+#DEBHELPER#
+exit 0
