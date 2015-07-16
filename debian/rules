@@ -2,3 +2,6 @@
 
 %:
 	dh $@ --with python-virtualenv
+
+override_dh_virtualenv:
+	dh_virtualenv --pypi-url http://127.0.0.1:3141/root/pypi/
