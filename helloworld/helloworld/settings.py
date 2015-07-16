@@ -100,3 +100,18 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
 STATIC_URL = '/static/'
+
+
+# HELLOWORLD OVERRIDES
+# --------------------
+# Everything above this heading is stock Django settings - no customisations
+
+# Log to a local SQLite file in /tmp (for now)
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': '/tmp/db.sqlite3',
+    }
+}
+
+STATIC_ROOT = os.path.join(BASE_DIR, '../usr/share/static')

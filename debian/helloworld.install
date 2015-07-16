@@ -1,3 +1,4 @@
 etc/uwsgi/helloworld.ini /etc/uwsgi/
 etc/init/helloworld.conf /etc/init/
 etc/nginx/sites-enabled/helloworld.conf /etc/nginx/sites-enabled/
+usr/share/static/* /usr/share/static/
