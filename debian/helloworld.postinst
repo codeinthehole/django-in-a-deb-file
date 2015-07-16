@@ -2,6 +2,7 @@
 
 # Start/restart Upstart job
 SERVICE=helloworld
+
 if $(status $SERVICE | grep -q "start/running")
 then
     # Service already running - restart
@@ -18,7 +19,8 @@ then
 fi
 
 # Reload nginx
-service nginx configtest && service nginx restart
+echo "Restarting nginx"
+service nginx configtest > /dev/null && service nginx restart > /dev/null
 
 #DEBHELPER#
 exit 0
