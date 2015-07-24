@@ -37,4 +37,4 @@ List contents of a package with
 uWSGI is configured to provide statistics and the uwsgitop commmand is included
 in the package. To view what uWSGI is doing, use:
 
-    $ /usr/share/python/helloworld/bin/uwsgitop /tmp/stats.sock
+    $ /usr/share/python/helloworld/bin/uwsgitop /tmp/uwsgi.stats.sock
