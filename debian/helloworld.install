@@ -1,4 +1,4 @@
-etc/uwsgi/helloworld.ini /etc/uwsgi/
-etc/init/helloworld.conf /etc/init/
-etc/nginx/sites-enabled/helloworld.conf /etc/nginx/sites-enabled/
+etc/uwsgi/django_app.ini /etc/uwsgi/
+etc/init/django_app.conf /etc/init/
+etc/nginx/sites-enabled/django_app.conf /etc/nginx/sites-enabled/
 usr/share/static/* /usr/share/static/

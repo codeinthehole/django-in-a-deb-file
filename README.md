@@ -60,3 +60,22 @@ uWSGI is configured to provide statistics and the uwsgitop commmand is included
 in the package. To view what uWSGI is doing, use:
 
     $ /usr/share/python/helloworld/bin/uwsgitop /tmp/uwsgi.stats.sock
+
+## Customising
+
+This sample project is called "helloworld", this is the name of both:
+
+- The Python package (hence why the package files are installed in
+  `/usr/share/python/helloworld/`)
+
+- The Debian package 
+
+If you start with this repo, you'll want to rename the following things:
+
+- `src/helloworld` - the Python package location, this also requires path
+  changes in `etc/init/django_app.conf`, `etc/uwsgi/django_app.ini`
+- `setup.py` - change the `name` kwarg
+- `debian/control` - change the Debian package name
+- `debian/helloworld.install`
+- `debian/helloworld.postinst`
+- `debian/helloworld.triggers`
