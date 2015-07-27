@@ -21,6 +21,28 @@ Eg, to run migrations:
 
     $ /usr/share/python/helloworld# DJANGO_SETTINGS_MODULE=helloworld.settings bin/django-admin migrate
 
+## Configuration
+
+Environment variables are read from an optional `/etc/django_app.env` file. By
+default, the `settings.py` module looks for the following env vars:
+
+* `SECRET_KEY`
+* `DEBUG` (set this to `0` to disable debug mode)
+* `ALLOWED_HOSTS` - a comma-separated list of domains
+
+Use your favourite configuration management software to put this file in place.
+At a minimum, you could use an AWS "user data" script like the following:
+
+```bash
+#!/usr/bin/env bash
+
+cat <<SETTINGS > /etc/django_app.env
+DEBUG = 0
+ALLOWED_HOSTS = "mydomain.com,subdomain.mydomain.com"
+SECRET_KEY = "a459ckak1k23la2039ddkd"
+SETTINGS
+```
+
 ## Package structure
 
 Python packages are stored in `/usr/share/python/$package`. 

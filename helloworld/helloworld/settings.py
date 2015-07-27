@@ -15,18 +15,23 @@ import os
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
+# Use django-dotenv to load env variables
+ENV_FILE = os.path.join(BASE_DIR, '/etc/django_app.env')
+if os.path.exists(ENV_FILE):
+    import dotenv
+    dotenv.read_dotenv(ENV_FILE)
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.8/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = ')&b+zs8h=d04rvq&z_+6k6mvc27ipn8x15ml_+*!^=f$qswo4!'
+DEFAULT_SECRET_KEY = ')&b+zs8h=d04rvq&z_+6k6mvc27ipn8x15ml_+*!^=f$qswo4!'
+SECRET_KEY = os.environ.get("SECRET_KEY", DEFAULT_SECRET_KEY)
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = bool(int(os.environ.get("DEBUG", "1")))
 
-ALLOWED_HOSTS = []
-
+ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS", "").split(",")
 
 # Application definition
 
