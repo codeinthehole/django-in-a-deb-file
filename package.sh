@@ -3,7 +3,7 @@
 set -e
 
 echo "Pre-packaging steps"
-helloworld/manage.py collectstatic --noinput
+src/manage.py collectstatic --noinput
 
 echo "Creating package"
 vagrant ssh packaging -- "cd /vagrant/ && sudo dpkg-buildpackage -us -uc"
