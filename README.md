@@ -79,3 +79,9 @@ If you start with this repo, you'll want to rename the following things:
 - `debian/helloworld.install`
 - `debian/helloworld.postinst`
 - `debian/helloworld.triggers`
+
+## Deployment procedure
+
+When ready to deploy, you need to bump the version:
+
+    $ ./bump_version.sh
