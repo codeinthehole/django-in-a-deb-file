@@ -15,3 +15,6 @@ usr/share/static/
 # Debian packaging
 debian/helloworld/
 debian/helloworld.*.log
+
+debian/changelog
+src/helloworld/version.py

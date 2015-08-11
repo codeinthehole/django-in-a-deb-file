@@ -1,9 +1,14 @@
 #!/usr/bin/env python
 from setuptools import setup, find_packages
+import os
 
 PACKAGE_NAME = "helloworld"
+VERSION_FILEPATH = "src/%s/version.py" % PACKAGE_NAME
 
-exec(open('src/%s/version.py' % PACKAGE_NAME).read())
+if os.path.exists(VERSION_FILEPATH):
+    exec(open(VERSION_FILEPATH).read())
+else:
+    __version__ = '0.1'
 
 setup(
     name=PACKAGE_NAME,
