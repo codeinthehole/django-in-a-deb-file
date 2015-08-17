@@ -1,0 +1,5 @@
+PACKAGE (VERSION) unstable; urgency=medium
+
+  * DESCRIPTION
+
+ -- Build-bot <buildbot@example.com>  BUILD_DATE
