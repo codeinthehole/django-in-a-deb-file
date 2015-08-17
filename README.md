@@ -85,3 +85,21 @@ If you start with this repo, you'll want to rename the following things:
 When ready to deploy, you need to bump the version:
 
     $ ./bump_version.sh
+
+## Installing 
+
+Use the [deb-s3](http://invalidlogic.com/2013/02/26/managing-apt-repos-on-s3/)
+library to upload the `.deb` file into S3. You'll first need to create a S3
+bucket that is readable by the destination server. Then run:
+    
+    $ deb-s3 upload --bucket <bucket-name> <package>.deb
+
+to upload the package. On the destination server, append:
+
+    deb https://<bucket-name>.s3.amazonaws.com stable main
+
+to `/etc/apt/sources.list` then install using:
+
+    $ apt-get install <package>
+
+
