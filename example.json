@@ -1,0 +1,25 @@
+{
+  "variables": {
+    "aws_access_key": "",
+    "aws_secret_key": ""
+  },
+  "builders": [{
+    "type": "amazon-ebs",
+    "access_key": "{{user `aws_access_key`}}",
+    "secret_key": "{{user `aws_secret_key`}}",
+    "region": "eu-west-1",
+    "source_ami": "ami-47a23a30",
+    "instance_type": "t2.micro",
+    "ssh_username": "ubuntu",
+    "ami_name": "helloworld-{{timestamp}}"
+  }],
+  "provisioners": [{
+    "type": "shell",
+    "inline": [
+      "sleep 30",
+      "echo 'deb https://octo-debian-packages.s3.amazonaws.com stable main' | sudo tee -a /etc/apt/sources.list",
+      "sudo apt-get update",
+      "sudo apt-get install -y --force-yes helloworld"
+    ]
+  }]
+}
