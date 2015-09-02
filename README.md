@@ -52,9 +52,13 @@ Nginx.
 
 ## Useful commands
 
-List contents of a package with 
+List contents of a package:
 
     $ dpkg -c file.deb
+
+List available versions of a package:
+
+    $ apt-cache madison <package>
 
 uWSGI is configured to provide statistics and the uwsgitop commmand is included
 in the package. To view what uWSGI is doing, use:
@@ -80,19 +84,13 @@ If you start with this repo, you'll want to rename the following things:
 - `debian/helloworld.postinst`
 - `debian/helloworld.triggers`
 
-## Deployment procedure
-
-When ready to deploy, you need to bump the version:
-
-    $ ./bump_version.sh
-
 ## Installing 
 
 Use the [deb-s3](http://invalidlogic.com/2013/02/26/managing-apt-repos-on-s3/)
 library to upload the `.deb` file into S3. You'll first need to create a S3
 bucket that is readable by the destination server. Then run:
     
-    $ deb-s3 upload --bucket <bucket-name> <package>.deb
+    $ deb-s3 upload --preserve-packages --bucket <bucket-name> <package>.deb
 
 to upload the package. On the destination server, append:
 
@@ -102,5 +100,3 @@ to `/etc/apt/sources.list` then install using:
 
     $ apt-get update
     $ apt-get install <package>
-
-
