@@ -10,7 +10,7 @@ TODO
 # Python packaging
 build/
 dist/
-usr/share/static/
+debian/usr/share/static/
 
 # Debian packaging
 debian/helloworld/

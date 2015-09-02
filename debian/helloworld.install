@@ -1,4 +1,4 @@
-etc/uwsgi/django_app.ini /etc/uwsgi/
-etc/init/django_app.conf /etc/init/
-etc/nginx/sites-enabled/django_app.conf /etc/nginx/sites-enabled/
-usr/share/static/* /usr/share/static/
+debian/etc/uwsgi/django_app.ini /etc/uwsgi/
+debian/etc/init/django_app.conf /etc/init/
+debian/etc/nginx/sites-enabled/django_app.conf /etc/nginx/sites-enabled/
+debian/usr/share/static/* /usr/share/static/

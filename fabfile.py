@@ -9,6 +9,9 @@ TEMP_FOLDERS = (
 
 TEMP_FILES = (
     "debian/%s.debhelper.log" % PACKAGE,
+    "debian/changelog",
+    "debian/files",
+    "src/%s/version.py" % PACKAGE,
 )
 
 

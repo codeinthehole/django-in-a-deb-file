@@ -119,4 +119,4 @@ DATABASES = {
     }
 }
 
-STATIC_ROOT = os.path.join(BASE_DIR, '../usr/share/static')
+STATIC_ROOT = os.path.join(BASE_DIR, '../debian/usr/share/static')
