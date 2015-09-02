@@ -1,6 +1,0 @@
-#!/usr/bin/env ruby
-#^syntax detection
-
-forge "https://forgeapi.puppetlabs.com"
-
-mod 'puppetlabs-ntp', "4.1.0"
