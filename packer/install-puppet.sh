@@ -1,6 +1,5 @@
 #!/usr/bin/env bash 
 
-set -x  # Print commands
 set -e  # Fail on error
 
 # Install puppet (see https://docs.puppetlabs.com/guides/install_puppet/install_debian_ubuntu.html)
