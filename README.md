@@ -100,6 +100,7 @@ to upload the package. On the destination server, append:
 
 to `/etc/apt/sources.list` then install using:
 
+    $ apt-get update
     $ apt-get install <package>
 
 
