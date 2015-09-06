@@ -5,17 +5,18 @@ TODO
 .vagrant
 
 # Build artifacts
-*.deb
+debian/dist/*.deb
 
 # Python packaging
 build/
 dist/
-debian/usr/share/static/
 
 # Debian packaging
 debian/helloworld/
 debian/helloworld.*.log
 debian/changelog
 debian/files
+debian/usr/share/static/
 
+# Python version file
 src/helloworld/version.py

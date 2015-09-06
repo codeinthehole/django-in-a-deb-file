@@ -70,7 +70,11 @@ def package():
 
     print "Build package"
     api.local('vagrant ssh packaging -- "cd /vagrant/ && sudo dpkg-buildpackage -us -uc"')
-    api.local('vagrant ssh packaging -- "sudo mv /*.deb /vagrant"')
+
+    # dpkg-buildpackage creates the .deb file in the root folder (/) on the
+    # file system. We need to move that into the shared folder (/vagrant) so we
+    # can access it from the host machine.
+    api.local('vagrant ssh packaging -- "sudo mv /*.deb /vagrant/dist/"')
 
 
 def _commit_sha():
