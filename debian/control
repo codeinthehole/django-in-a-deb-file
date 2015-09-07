@@ -2,7 +2,10 @@ Source: helloworld
 Section: python
 Priority: extra
 Maintainer: Build-bot <buildbot@example.com>
-Build-Depends: debhelper (>= 9), python, dh-virtualenv (>= 0.6), python-dev
+Build-Depends: debhelper (>= 9), 
+               python, 
+               dh-virtualenv (>= 0.6), 
+               python-dev
 Standards-Version: 3.9.5
 
 Package: helloworld

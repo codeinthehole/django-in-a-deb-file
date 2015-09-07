@@ -9,7 +9,11 @@ from fabric import api
 PACKAGE = "helloworld"
 
 TEMP_FOLDERS = (
-    "build", "dist", "usr/share/static", "debian/%s" % PACKAGE
+    "build",
+    "dist",
+    "debian/usr/share/static",
+    "debian/%s" % PACKAGE,
+    "src/%s.egg-info" % PACKAGE,
 )
 
 TEMP_FILES = (
@@ -17,6 +21,7 @@ TEMP_FILES = (
     "debian/changelog",
     "debian/files",
     "src/%s/version.py" % PACKAGE,
+    "src/db.sqlite3",
 )
 
 DEBIAN_CHANGELOG_TEMPLATE = """PACKAGE (VERSION) unstable; urgency=medium
@@ -74,7 +79,7 @@ def package():
     # dpkg-buildpackage creates the .deb file in the root folder (/) on the
     # file system. We need to move that into the shared folder (/vagrant) so we
     # can access it from the host machine.
-    api.local('vagrant ssh packaging -- "sudo mv /*.deb /vagrant/dist/"')
+    api.local('vagrant ssh packaging -- "sudo mv /*.deb /vagrant/debian/dist/"')
 
 
 def _commit_sha():

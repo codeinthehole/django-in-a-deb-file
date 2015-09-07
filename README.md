@@ -1,10 +1,19 @@
-# Packaging a Django site as a debfile 
+# Packaging a Django site as a .deb file 
 
-An example Django project which can be built and deployed as a single `.deb`
-file. The package includes the project virtualenv as well as uWSGI, nginx and
-upstart config files. Once built, the project can be installed using:
+This repo is an example Django project which can be built and deployed as a
+single `.deb` file. The package includes the project virtualenv as well as
+uWSGI, nginx and upstart config files. 
 
-    $ gdebi helloworld_0.1-1_amd64.deb
+Deploying using native packages has [many advantages](https://hynek.me/articles/python-app-deployment-with-native-packages/) 
+and hopefully this repo can serve as a template for other Django projects.
+
+## Quick start
+
+Clone this repository and install the development tools:
+
+    $ git clone https://github.com/codeinthehole/django-deb-file.git
+    $ cd django-deb-file
+    $ fab package
 
 ## Building the package
 
