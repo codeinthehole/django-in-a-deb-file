@@ -7,5 +7,5 @@ apt-get install dh-virtualenv devscripts debhelper python-dev python-pip -y
 pip install -U pip devpi-server
 
 # Use upstart to manage devpi process
-cp /vagrant/deploy/devpi.conf /etc/init/
+cp /vagrant/vagrant/devpi.conf /etc/init/
 start devpi
